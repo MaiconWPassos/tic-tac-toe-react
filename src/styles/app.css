@@ -1,0 +1,25 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #6d67b8;
+}
+
+.App-header {
+  width: 100%;
+  text-align: center;
+}
+
+.App-header h1 {
+  font-size: 64px;
+  color: #fff;
+}
+
+@media (max-width: 968px) {
+  .App-header h1 {
+    font-size: 35px;
+  }
+}

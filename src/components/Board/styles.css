@@ -1,0 +1,100 @@
+.board {
+  width: 25vw;
+  height: 25vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  margin-top: 24px;
+}
+
+.player {
+  font-size: 24px;
+  color: #fff;
+}
+.houses {
+  border: 4px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  color: #fff;
+  font-size: 60px;
+  cursor: pointer;
+}
+
+.houses.active {
+  color: #0eac96;
+  transition: color 0.25s ease-in-out;
+}
+
+.houses:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.houses:nth-child(1) {
+  border-top: none;
+  border-left: none;
+}
+
+.houses:nth-child(2) {
+  border-top: none;
+}
+
+.houses:nth-child(3) {
+  border-top: none;
+  border-right: none;
+}
+
+.houses:nth-child(4) {
+  border-left: none;
+}
+
+.houses:nth-child(6) {
+  border-right: none;
+}
+
+.houses:nth-child(7) {
+  border-left: none;
+  border-bottom: none;
+}
+
+.houses:nth-child(8) {
+  border-bottom: none;
+}
+
+.houses:nth-child(9) {
+  border-right: none;
+  border-bottom: none;
+}
+
+.reset {
+  padding: 5px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 20px;
+  font-size: 18px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.reset svg {
+  margin-left: 10px;
+}
+
+.reset:hover {
+  background: #fff;
+  color: #6d67b8;
+}
+
+@media (max-width: 968px) {
+  .board {
+    width: 95vw;
+    height: 95vw;
+  }
+
+  .houses {
+    border-width: 2px;
+  }
+}
