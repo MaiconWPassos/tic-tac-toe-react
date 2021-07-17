@@ -65,6 +65,21 @@ const Board: React.FC = () => {
     });
   }, [houses, player]);
 
+  const reset = useCallback(() => {
+    setPlay("X");
+    setHouses([
+      { value: "", active: false },
+      { value: "", active: false },
+      { value: "", active: false },
+      { value: "", active: false },
+      { value: "", active: false },
+      { value: "", active: false },
+      { value: "", active: false },
+      { value: "", active: false },
+      { value: "", active: false },
+    ]);
+  }, []);
+
   const isTie = useCallback(() => {
     if (houses.find((t) => t.value === "") === undefined) {
       MySwal.fire({
@@ -76,7 +91,7 @@ const Board: React.FC = () => {
 
       setPlay("X");
     }
-  }, [houses]);
+  }, [houses, reset]);
 
   const handleSetHouse = useCallback(
     (index: number) => {
@@ -94,20 +109,7 @@ const Board: React.FC = () => {
     [houses, player, isTie, isWinner]
   );
 
-  const reset = useCallback(() => {
-    setPlay("X");
-    setHouses([
-      { value: "", active: false },
-      { value: "", active: false },
-      { value: "", active: false },
-      { value: "", active: false },
-      { value: "", active: false },
-      { value: "", active: false },
-      { value: "", active: false },
-      { value: "", active: false },
-      { value: "", active: false },
-    ]);
-  }, []);
+  
   return (
     <>
       <div className="player">Player {player === "X" ? "1" : "2"}</div>
