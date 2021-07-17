@@ -2,10 +2,10 @@
 
 
 ## Functionalities ✔️
-Multiplayer
-Alerts
+- Multiplayer
+- Alerts
 
 ## Technologies👨‍💻
-React 
-Typescripts
-SweetAlert2
+- React 
+- Typescripts
+- SweetAlert2
