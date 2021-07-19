@@ -1,6 +1,9 @@
+
 # Tic Tac Toe React Game 🎮
 
 ![screencapture-mwps-tic-tac-toe-react-netlify-app-2021-07-19-15_41_08](https://user-images.githubusercontent.com/50342101/126210567-3a211004-8849-4c2c-820d-90e340a293e5.png)
+![screencapture-mwps-tic-tac-toe-react-netlify-app-2021-07-19-15_43_41](https://user-images.githubusercontent.com/50342101/126210900-281b75c0-ff63-4b0f-914a-c0f313e93fd5.png)![screencapture-mwps-tic-tac-toe-react-netlify-app-2021-07-19-15_44_30](https://user-images.githubusercontent.com/50342101/126210979-18e177fb-f7cf-4ecc-915f-bc66cfcdfad8.png)
+
 
 ### [Live Demo](https://mwps-tic-tac-toe-react.netlify.app/)
 
