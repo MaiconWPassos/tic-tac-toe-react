@@ -20,6 +20,7 @@ const winningSequences = [
 const MySwal = withReactContent(Swal);
 const Board: React.FC = () => {
   const [player, setPlay] = useState<string>("X");
+  const [finished, setFinished] = useState(false);
   const [houses, setHouses] = useState<
     Array<{
       value: string;
@@ -37,8 +38,10 @@ const Board: React.FC = () => {
     { value: "", active: false },
   ]);
 
-  const isWinner = useCallback(() => {
-    winningSequences.forEach((seq) => {
+  const isWinner = useCallback((): boolean => {
+    for (let index = 0; index < winningSequences.length; index++) {
+      const seq = winningSequences[index];
+
       let house1 = seq[0];
       let house2 = seq[1];
       let house3 = seq[2];
@@ -54,15 +57,11 @@ const Board: React.FC = () => {
         newHouses[house2].active = true;
         newHouses[house3].active = true;
 
-        setTimeout(() => {
-          setPlay("X");
-          MySwal.fire({
-            title: `Player ${player === "X" ? 1 : 2} win`,
-            icon: "success",
-          });
-        }, 500);
+        return true;
       }
-    });
+    }
+
+    return false;
   }, [houses, player]);
 
   const reset = useCallback(() => {
@@ -78,6 +77,8 @@ const Board: React.FC = () => {
       { value: "", active: false },
       { value: "", active: false },
     ]);
+    setFinished(false)
+
   }, []);
 
   const isTie = useCallback(() => {
@@ -101,15 +102,25 @@ const Board: React.FC = () => {
         newHouses[index].value = player;
 
         setHouses(newHouses);
-        isWinner();
+        if (!isWinner()) {
+          isTie();
+        } else {
+          setTimeout(() => {
+            setPlay("X");
+            MySwal.fire({
+              title: `Player ${player === "X" ? 1 : 2} win`,
+              icon: "success",
+            });
+          }, 500);
+          setFinished(true)
+        }
+
         setPlay(player === "X" ? "O" : "X");
-        isTie();
       }
     },
     [houses, player, isTie, isWinner]
   );
 
-  
   return (
     <>
       <div className="player">Player {player === "X" ? "1" : "2"}</div>
@@ -119,6 +130,7 @@ const Board: React.FC = () => {
             className={`houses ${h.active ? "active" : ""}`}
             key={i}
             onClick={() => handleSetHouse(i)}
+            disabled={finished}
           >
             {h.value !== "" ? (
               h.value === "X" ? (
