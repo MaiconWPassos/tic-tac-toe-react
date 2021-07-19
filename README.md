@@ -6,7 +6,7 @@
 
 
 ### [Live Demo](https://mwps-tic-tac-toe-react.netlify.app/)
-
+### Layout on [Figma](https://www.figma.com/file/BWgXXksSUYp5hUGhqRDFuL/Tic-Tac-Toe?node-id=0%3A1)
 ## Description
 Famous tic tac toe game using React with Typescript
 
