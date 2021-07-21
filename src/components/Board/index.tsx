@@ -6,7 +6,16 @@ import withReactContent from "sweetalert2-react-content";
 
 import "./styles.css";
 
-const winningSequences = [
+
+type Sequences = Array<Array<number>>
+type House = {
+  value: string,
+  active: boolean
+}
+
+
+
+const winningSequences:Sequences = [
   [0, 1, 2],
   [3, 4, 5],
   [6, 7, 8],
@@ -21,12 +30,7 @@ const MySwal = withReactContent(Swal);
 const Board: React.FC = () => {
   const [player, setPlay] = useState<string>("X");
   const [finished, setFinished] = useState(false);
-  const [houses, setHouses] = useState<
-    Array<{
-      value: string;
-      active: boolean;
-    }>
-  >([
+  const [houses, setHouses] = useState<House[]>([
     { value: "", active: false },
     { value: "", active: false },
     { value: "", active: false },
