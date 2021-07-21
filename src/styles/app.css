@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   background-color: #6d67b8;
+  position: relative;
 }
 
 .App-header {
@@ -18,8 +19,23 @@
   color: #fff;
 }
 
+.donate-link{
+  padding: 10px 20px;
+
+}
+
+.donate-link a {
+  color: #fff;
+
+}
+
+
+
 @media (max-width: 968px) {
   .App-header h1 {
     font-size: 35px;
   }
+
+
+
 }
